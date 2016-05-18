@@ -1,10 +1,14 @@
 """Disks Allocation API"""
 import kvstore
 
+DISKS_VERSION_PATH = "testing"
+
+
 # Create a global kvstore client
 ENDPOINT = 'http://10.112.0.101:8500/v1/kv'
 _kv = kvstore.Client(ENDPOINT)
-PREFIX = 'resources/disks'
+#PREFIX = 'resources/disks'
+PREFIX = 'resources/disks/' + DISKS_VERSION_PATH
 
 
 def get(node):
@@ -47,8 +51,10 @@ def _parse_disk_info(subtree):
 
     return disks_info
 
+
 def _parse_last_element(key):
     return key.split('/')[-1]
+
 
 def _parse_diskname(key):
     """Extract disk name from key"""
