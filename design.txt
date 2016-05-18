@@ -1,0 +1,38 @@
+REST
+----
+Endpoint: resources/disks/v1/
+
+GET <node>/disks
+{
+    'disk0': 'free',
+    'disk1': 'jenes/mpi/cluster01/master0',
+    'disk2': 'free',
+    'disk3': 'free',
+}
+
+GET <node>/disks?free
+{
+    'number': 3,
+    'disks': ['disk0', disk2', 'disk3']
+}
+
+
+GET <node>/disks?used
+{
+    'number': 1,
+    'disks': ['disk1']
+}
+
+GET <node>/disks/<diskX>
+{
+    'status': 'free'
+}
+
+PUT <node>/disks/<diskX>
+{
+    'status': 'jenes/mpi/cluster01/master0'
+}
+
+KV Store
+--------
+/resources/<node>/disks/<disk>/status
