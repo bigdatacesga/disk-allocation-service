@@ -1,7 +1,7 @@
 """Disks Allocation API"""
 import kvstore
 
-DISKS_VERSION_PATH = "testing"
+DISKS_VERSION_PATH = "production"
 
 
 # Create a global kvstore client
